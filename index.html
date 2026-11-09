@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+  <meta name="theme-color" content="#271409">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Rádio Esperança 101.1FM">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Rádio Esperança 101.1FM — A voz da fé, a sintonia da esperança! Instale o aplicativo e acompanhe a transmissão ao vivo.">
+  <meta property="og:title" content="Rádio Esperança 101.1FM — A voz da fé, a sintonia da esperança!">
+  <meta property="og:description" content="Instale o aplicativo Rádio Esperança 101.1FM e acompanhe a transmissão ao vivo.">
+  <meta property="og:image" content="assets/radio-esperanca-logo.png">
+  <link rel="icon" type="image/png" href="icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest?v=re-1.9.4-01">
+  <link rel="stylesheet" href="styles.css?v=re-1.9.4-01">
+  <script src="gate.js?v=re-1.9.4-01"></script>
+  <script defer src="landing.js?v=re-1.9.4-01"></script>
+  <script defer src="config.js?v=re-1.9.4-01"></script>
+  <script defer src="app.js?v=re-1.9.4-01"></script>
+  <title>Rádio Esperança 101.1FM — A voz da fé, a sintonia da esperança!</title>
+</head>
+<body>
+  <section id="installLanding" class="install-landing" aria-label="Instalar o aplicativo Rádio Esperança 101.1FM">
+    <div class="install-landing__inner">
+      <header class="landing-header">
+        <span class="landing-header__brand"><span class="landing-live-dot" aria-hidden="true"></span>RÁDIO ESPERANÇA</span>
+        <span class="landing-header__frequency">101.1 FM</span>
+      </header>
+      <div class="landing-welcome">
+        <div class="landing-logo-glow">
+          <img class="landing-logo" src="assets/radio-esperanca-logo.png" alt="Logotipo da Rádio Esperança 101.1FM" width="500" height="500">
+        </div>
+        <span class="landing-eyebrow">APLICATIVO OFICIAL</span>
+        <h1 class="landing-title">Rádio <span>Esperança</span></h1>
+        <p class="landing-slogan">A voz da fé, a sintonia da esperança!</p>
+        <p class="landing-copy">Acompanhe a transmissão ao vivo. Instale o aplicativo e ouça de onde estiver.</p>
+        <div class="landing-actions">
+          <button id="landingInstallButton" class="landing-primary" type="button" aria-describedby="landingInstallHint">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3"/></svg>
+            <span id="landingInstallLabel">INSTALAR APLICATIVO</span>
+          </button>
+          <p id="landingInstallHint" class="landing-hint" aria-live="polite">Instalação gratuita · Android · iPhone · Windows</p>
+        </div>
+      </div>
+      <footer class="landing-footer">RÁDIO ESPERANÇA <span>·</span> 101.1 FM</footer>
+    </div>
+  </section>
+
+  <div class="app-shell" id="appShell" hidden>
+    <header class="topbar">
+      <div class="topbar__brand" aria-label="Rádio Esperança 101.1FM">
+        <span class="brand-mark"><img src="assets/radio-esperanca-logo.png" alt="" width="60" height="60"></span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-wordmark"><strong>RÁDIO ESPERANÇA</strong><small>101.1 FM</small></span>
+      </div>
+      <div id="onAirBadge" class="on-air-badge is-off" role="status" aria-live="polite">
+        <span class="badge-dot" aria-hidden="true"></span><span id="badgeText">DESLIGADA</span>
+      </div>
+    </header>
+
+    <main class="home-screen" aria-label="Rádio Esperança 101.1FM">
+      <section class="hero" aria-label="Identidade da rádio e equalizador circular">
+        <div class="visual-stage">
+          <img class="neon-background" src="assets/neon-waves-v2.svg" alt="" aria-hidden="true">
+          <div class="visual-atmosphere" aria-hidden="true"></div>
+          <div class="radial-visualizer" id="radialVisualizer">
+            <canvas id="radialCanvas" role="img" aria-label="Visualizador circular por frequências. Aguarda o início do áudio."></canvas>
+            <div class="logo-orbit" aria-hidden="true">
+              <img class="hero-logo" src="assets/radio-esperanca-logo.png" width="500" height="500" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="hero-text">
+          <div class="frequency-row"><span class="frequency-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <p class="frequency">101.1 <span>FM</span></p>
+            <span class="frequency-decoration" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          <h1>A voz da fé, a sintonia da esperança!</h1>
+        </div>
+      </section>
+
+      <section class="now-card" aria-label="Música tocando agora">
+        <div class="music-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path fill="#ffffff" d="M47.4 9.2 21.5 15c-1.5.3-2.5 1.6-2.5 3.2v27.1a13.8 13.8 0 0 0-5.5-1.1c-6.2 0-10.6 3.4-10.6 8.1s4.4 8.1 10.6 8.1c6.1 0 10.7-3.6 10.7-8.1V27.1l21-4.7v16.4a14.6 14.6 0 0 0-5.5-1.1c-6.2 0-10.7 3.4-10.7 8.1s4.5 8.1 10.7 8.1 10.7-3.6 10.7-8.1V12.3c0-2.1-1.5-3.6-3-3.1Z"/></svg>
+        </div>
+        <div class="now-divider" aria-hidden="true"></div>
+        <div class="now-copy">
+          <p class="now-label">TOCANDO AGORA</p>
+          <p id="trackTitle" class="now-title">Rádio Esperança</p>
+          <p id="trackArtist" class="now-artist">A voz da fé, a sintonia da esperança!</p>
+        </div>
+        <span class="now-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span id="metadataStatus" class="sr-only" aria-live="polite">Aguardando metadados</span>
+      </section>
+
+      <div class="bottom-actions" aria-label="Reprodução e compartilhamento">
+        <section class="power-wrap" aria-label="Ligar ou desligar a Rádio Esperança 101.1FM">
+          <button id="powerButton" class="power-button" type="button" aria-pressed="false" aria-label="Ligar rádio" title="Ligar rádio" aria-describedby="playbackHelper">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5v9M6.1 6.2a8.2 8.2 0 1 0 11.8 0"/></svg>
+          </button>
+          <p id="playbackHelper" class="sr-only" role="status" aria-live="polite">Toque para ouvir a programação ao vivo.</p>
+        </section>
+        <a id="shareApp" class="share-action" href="https://wa.me/?text=" target="_blank" rel="noopener noreferrer" aria-label="Compartilhar convite para instalar o aplicativo da Rádio Esperança 101.1FM pelo WhatsApp" title="Compartilhar Rádio Esperança 101.1FM pelo WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.7"/><circle cx="6" cy="12" r="2.7"/><circle cx="18" cy="19" r="2.7"/><path d="m8.6 10.7 6.8-4.1M8.6 13.3l6.8 4.1"/></svg>
+          <span>COMPARTILHAR</span>
+        </a>
+      </div>
+
+      <p id="meterNote" class="sr-only">Aguardando áudio.</p>
+      <p id="connectionText" class="sr-only" role="status" aria-live="polite">Rádio desligada.</p>
+    </main>
+  </div>
+  <noscript><div class="noscript">Ative o JavaScript para instalar e usar o aplicativo da Rádio Esperança 101.1FM.</div></noscript>
+</body>
+</html>
